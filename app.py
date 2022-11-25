@@ -2,7 +2,7 @@ from  flask import  Flask,request
 from datetime import datetime
 from twilio.twiml.messaging_response import MessagingResponse
 from pymongo import MongoClient
-cluster = MongoClient("mongodb+srv://HIB:97aDqbybPPD-n!R@cluster0.jcapc.mongodb.net/?retryWrites=true&w=majority")
+cluster = MongoClient("cluster_url")
 db = cluster["bakery"]
 users = db["users"]
 orders = db["orders"]
@@ -29,7 +29,7 @@ def reply():
             res.message("Please Enter the Valid Response")
             return str(res)
         if option == 1:
-            res.message("You can contact us through number : +977982656232 \n email : technicalranjit@gmail.com")
+            res.message("You can contact us through number : +9779826... \n email : technicalranjit@gmail.com")
 
         if option ==2:
             res.message("You have Selected Order Option")
